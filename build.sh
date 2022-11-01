@@ -4,7 +4,7 @@
 # Copyright (C) 2021 CloudedQuartz
 # Copyright (C) 2021 REIGNZ
 # Copyright (C) 2021 rokuSENPAI
-#
+# Copyright (C) 2021 Yoriscape
 
 # Config
 DIR="${PWD}"
