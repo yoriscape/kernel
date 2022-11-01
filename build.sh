@@ -17,7 +17,7 @@ GCC32="$DIR/arm-linux-androideabi-4.9"
 DEVICE="alioth"
 DEFCONFIG="alioth_defconfig"
 LOG="$KERNEL_DIR/error.log"
-VERSION="0.0.4"
+VERSION="0.1"
 
 CHANGELOG=""
 
@@ -121,7 +121,7 @@ build_end() {
 	git clean -fd
 	mv "$KERNEL_IMG" "$AK_DIR"/Image.gz-dtb
     mv "$KERNEL_DTBO" "$AK_DIR"/dtbo.img
-	ZIP_NAME=$KERNELNAME-V0.0.4-alpha-$(date +%Y-%m-%d_%H%M).zip
+	ZIP_NAME=$KERNELNAME-V0.1-Beta-$(date +%Y-%m-%d_%H%M).zip
 	zip -r9 "$ZIP_NAME" ./* -x .git README.md ./*placeholder
 	tg_pushzip "$ZIP_NAME" "Time taken: <code>$((DIFF / 60))m $((DIFF % 60))s</code>"
 	echo -e "\n> Sent zip through Telegram.\n> File: $ZIP_NAME"
