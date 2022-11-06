@@ -23,7 +23,6 @@ CHANGELOG=""
 
 clone() {
     git clone https://github.com/VoidUI-Devices/kernel_xiaomi_sm8250.git $KERNEL_DIR 
-    git clone https://github.com/EmanuelCN/zyc_clang-14 $Clang
     git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 $GCC
     git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9 $GCC32
     git clone https://github.com/yoriscape/anykernel.git $AK_DIR
