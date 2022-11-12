@@ -15,7 +15,7 @@ CLANG_DIR="$DIR/clang"
 GCC="$DIR/aarch64-linux-android-4.9"
 GCC32="$DIR/arm-linux-androideabi-4.9"
 DEVICE="alioth"
-DEFCONFIG="vendor/alioth_user_defconfig"
+DEFCONFIG="alioth_defconfig"
 LOG="$KERNEL_DIR/error.log"
 VERSION="1.0"
 
