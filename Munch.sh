@@ -14,8 +14,8 @@ KERNEL_DIR="$DIR/alioth"
 CLANG_DIR="$DIR/clang"
 GCC="$DIR/aarch64-linux-android-4.9"
 GCC32="$DIR/arm-linux-androideabi-4.9"
-DEVICE="alioth"
-DEFCONFIG="alioth_defconfig"
+DEVICE="munch"
+DEFCONFIG="munch_defconfig"
 LOG="$KERNEL_DIR/error.log"
 VERSION="1.0"
 
@@ -85,7 +85,7 @@ build_setup() {
 }
 
 # build_config - builds .config file for device.
-alioth_defconfig() {
+munch_defconfig() {
 	make O=out $1 -j$(nproc --all)
 }
 # build_kernel - builds defconfig and kernel image using llvm tools, while saving the output to a specified log location
@@ -159,6 +159,6 @@ make O=out clean
 
 # Build device 1
 build_setup
-alioth_defconfig $DEFCONFIG
+munch_defconfig $DEFCONFIG
 build_kernel
 build_end $DEVICE
