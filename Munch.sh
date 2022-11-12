@@ -9,7 +9,7 @@
 # Config
 DIR="${PWD}"
 KERNELNAME="Vertigo"
-AK_DIR="$DIR/anykernel3"
+AK_DIR="$DIR/anykernel"
 KERNEL_DIR="$DIR/alioth"
 CLANG_DIR="$DIR/clang"
 GCC="$DIR/aarch64-linux-android-4.9"
