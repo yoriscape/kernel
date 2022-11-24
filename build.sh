@@ -14,8 +14,8 @@ KERNEL_DIR="$DIR/alioth"
 CLANG_DIR="$DIR/clang"
 GCC="$DIR/aarch64-linux-android-4.9"
 GCC32="$DIR/arm-linux-androideabi-4.9"
-DEVICE="munch"
-DEFCONFIG="munch_defconfig"
+DEVICE="alioth"
+DEFCONFIG="alioth_defconfig"
 LOG="$KERNEL_DIR/error.log"
 VERSION="1.0"
 
@@ -85,7 +85,7 @@ build_setup() {
 }
 
 # build_config - builds .config file for device.
-munch_defconfig() {
+alioth_defconfig() {
 	make O=out $1 -j$(nproc --all)
 }
 # build_kernel - builds defconfig and kernel image using llvm tools, while saving the output to a specified log location
@@ -113,7 +113,7 @@ build_end() {
         exit 1
     fi
     
-    python2 $DIR/scripts/ufdt/libufdt/utils/src/mkdtboimg.py  create $KERNEL_DIR/out/arch/arm64/boot/dtbo.img --page_size=4096 $KERNEL_DIR/out/arch/arm64/boot/dts/vendor/qcom/munch-sm8250-overlay.dtbo
+    python2 $DIR/scripts/ufdt/libufdt/utils/src/mkdtboimg.py  create $KERNEL_DIR/out/arch/arm64/boot/dtbo.img --page_size=4096 $KERNEL_DIR/out/arch/arm64/boot/dts/vendor/qcom/alioth-sm8250-overlay.dtbo
    
     
     echo -e "\n> Build successful! generating flashable zip..."
@@ -159,6 +159,6 @@ make O=out clean
 
 # Build device 1
 build_setup
-munch_defconfig $DEFCONFIG
+alioth_defconfig $DEFCONFIG
 build_kernel
 build_end $DEVICE
